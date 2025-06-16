@@ -1,0 +1,16 @@
+.provCerrada li {
+    display: none;
+}
+
+.provCerrada a {
+    text-decoration: underline;
+}
+
+.provAbierta li {
+    display:list-item;
+}
+
+button{
+    display: none;
+    border: none;
+}
