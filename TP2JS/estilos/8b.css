@@ -1,3 +1,7 @@
+.provCerrada {
+    cursor:pointer;
+}
+
 .provCerrada li {
     display: none;
 }
@@ -13,4 +17,5 @@
 button{
     display: none;
     border: none;
+    cursor:pointer;
 }

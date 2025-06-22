@@ -1,0 +1,33 @@
+<html>
+   <head>
+    <title>Div Opcional</title>
+   </head>
+   <body>
+    <form id="miFormulario">
+        <label for="tel">Teléfono</label>
+        <input type="text" id="tel" name="tel">
+        <input type="submit" value="Enviar" onclick="return validar();">
+    </form>
+    <div id="opcional"></div>
+
+    <table id="mi-tabla">
+            <thead>
+                <tr>
+                    <th>Ingreso</th>
+                    <th>Hora</th>
+                    <th>Navegador</th>
+                    <th>Respuesta</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                
+            </tbody>
+        </table>
+        <button id="delete" onclick=quitarFila();>Eliminar fila</button>
+
+        <div id="eliminados"></div>
+        <button id="delete" onclick=verEliminados();>Ver eliminados</button>
+    <script src="script.js"></script>
+   </body> 
+</html>

@@ -1,0 +1,44 @@
+/*
+Ejercicio 9: String
+Desarrollar una página que pida al usuario que ingrese un mensaje y sea escrito en
+pantalla en:
+
+- Mayúscula.
+// document.writeln(rta.toUpperCase());
+
+- Minúscula.
+
+- Solo el sub-mensaje que comienza el la posición 5 y de largo 10.
+// document.writeln(rta.substring(5,15))
+
+- Si la palabra hola está incluida dentro del mensaje escribir por pantalla
+“hola que tal”.
+// rta.includes('hola')?document.write('hola, qué tal'):document.write('...')
+
+- El mismo mensaje pero sin espacios en blanco. Y eliminado la palabra hola.
+// document.write(rta.replaceAll(' ', ''));
+
+- El mismo mensaje pero traduciendo al ingles las palabras: my por mi,
+hello por hola, name por nombre, …. Etc.
+*/
+
+// console.log("hola")
+let rta = prompt("Escriba un mensaje");
+
+var palabras = ['hola', 'mi', 'nombre', 'es', '...', 'etc.'];
+var words = ['hello', 'my', 'name', 'is', '...', 'etc.'];
+
+let rtaTraducida = rta;
+
+palabras.forEach((palabra, index) => {
+    if (rta.includes(palabra)) {  // se fija si alguna palabra coincide
+        rtaTraducida = rtaTraducida.replace(palabra, words[index]);
+    }
+});
+words.forEach((palabra, index) => {
+    if (rta.includes(palabra)) {  // se fija si alguna palabra coincide
+        rtaTraducida = rtaTraducida.replace(palabra, palabras[index]);
+    }
+});
+
+document.writeln(rtaTraducida);
