@@ -2,9 +2,9 @@
 document.addEventListener('DOMContentLoaded',cargarCss);
 
 function cargarCss() {
-//    let body = document.childNodes[0];
-   let body = document.body;
-   body.style = 'background-color: grey';
+    let body = document.childNodes[0];
+//    let body = document.body;
+   body.style = 'background-color: beige';
 }
 
 // REFERENCIAS
@@ -23,8 +23,11 @@ function mouseMove(e){
 
 // LÓGICA RATÓN
 
-sprite.addEventListener('mousedown', mouseDown);
 let newX = 0, newY = 0, startX = 0, startY = 0;
+
+const sprite = document.getElementById('sprite');
+
+sprite.addEventListener('mousedown', mouseDown);
 
 function mouseDown(e){
     startX = e.clientX;
@@ -37,15 +40,22 @@ function mouseDown(e){
 
 function verSiEntro(){
     let msj = document.getElementById('msj');
+    console.log(sprite.offsetTop);
     if(sprite.offsetTop == 260){
         msj.innerHTML = 'MUY BIEN';
     }
 }
 
 function mouseMove2(e){
+    // diferencia entre la posición anterior del mouse
+    // y la posición actual
+    // cuánto se ha movido el mouse desde 
+    // el último evento registrado.
     newX = startX - e.clientX; 
     newY = startY - e.clientY;
   
+    // se actualizan las variables startX y startY 
+    // para que almacenen la nueva posición del mouse
     startX = e.clientX;
     startY = e.clientY;
 

@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>
+            Formulario modelo
+        </title>
+    </head>
+    <body>
+        
+        <form id="miFormulario">
+            <label for="dni">DNI: </label>
+            <input type="number" id="dni" name="dni">
+            <input type="submit" onclick="return validar();">
+        </form>
+
+
+        <script src="script.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Captura el formulario por su ID
+            var form = document.getElementById('miFormulario');
+
+            // Agrega un controlador de eventos para el evento 'submit'
+            form.addEventListener('submit', function(event) {
+            // Evita que el formulario se envíe
+            event.preventDefault();
+            });
+        });
+        </script>
+    </body>
+</html>
