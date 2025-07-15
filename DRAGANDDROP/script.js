@@ -1,57 +1,56 @@
-
 let newX = 0, newY = 0, startX = 0, startY = 0;
 
-const tarjeta = document.getElementById('tarjeta');
+let lastTarjeta = null;
 
-tarjeta.addEventListener('mousedown', mouseDown)
+for (let i = 0; i < 9; i++) {
+    const tarjeta = document.getElementById(`tarjeta${i + 1}`);
+    tarjeta.addEventListener('mousedown', mouseDown);
+    function mouseDown(e) {
+        startX = e.clientX
+        startY = e.clientY
+        lastTarjeta = tarjeta;
 
-function mouseDown(e){
-    startX = e.clientX
-    startY = e.clientY
+        document.addEventListener('mousemove', mouseMove)
+        document.addEventListener('mouseup', mouseUp)
+    }
 
-    document.addEventListener('mousemove', mouseMove)
-    document.addEventListener('mouseup', mouseUp)
+    function mouseMove(e) {
+        newX = startX - e.clientX
+        newY = startY - e.clientY
+
+        startX = e.clientX
+        startY = e.clientY
+
+        tarjeta.style.top = (tarjeta.offsetTop - newY) + 'px'
+        tarjeta.style.left = (tarjeta.offsetLeft - newX) + 'px'
+        //console.log('x: '+e.clientX);
+        //console.log('y: '+e.clientY);
+    }
+
+    function mouseUp() {
+        document.removeEventListener('mousemove', mouseMove)
+        document.removeEventListener('mouseup', mouseUp)
+    }
+    
 }
 
-function mouseMove(e){
-    newX = startX - e.clientX 
-    newY = startY - e.clientY 
-  
-    startX = e.clientX
-    startY = e.clientY
+btn.addEventListener('click', checarPosicion);
 
-    tarjeta.style.top = (tarjeta.offsetTop - newY) + 'px'
-    tarjeta.style.left = (tarjeta.offsetLeft - newX) + 'px'
+function checarPosicion() {
+    if (lastTarjeta) {
+        console.log('x: ' + lastTarjeta.offsetLeft);
+        console.log('y: ' + lastTarjeta.offsetTop);
+        if (lastTarjeta.offsetLeft < 390 && 
+            lastTarjeta.offsetLeft > 360 &&
+            lastTarjeta.offsetTop < 220 && 
+            lastTarjeta.offsetTop > 195) {
+            lastTarjeta.style.top = 209 + 'px';
+            lastTarjeta.style.left = 374 + 'px';
+        } else {
+            alert('bien');
+        }
+    } else {
+        alert('No se ha movido ninguna tarjeta.');
+    }
 }
 
-function mouseUp(e){
-    document.removeEventListener('mousemove', mouseMove)
-}
-
-// document.addEventListener('DOMContentLoaded',cargarHtml);
-
-// function cargarHtml(){
-//     const div = document.querySelector('div');
-
-//     div.style = 'background-color: blue';
-
-//     let offsetX, offsetY;
-
-//     const mover = (e) => {
-//         // Actualiza la posición del div según la posición del cursor
-//         div.style.left = `${e.clientX - offsetX}px`;
-//         div.style.top = `${e.clientY - offsetY}px`;
-//     }
-
-//     div.addEventListener('mousedown',(e)=>{
-//         // Calcula los valores iniciales
-//         offsetX = e.clientX - div.offsetLeft;
-//         offsetY = e.clientY - div.offsetTop;
-//         document.addEventListener('mousemove',mover);
-//     })
-
-//     // Remueve el mousemove event listener
-//     document.addEventListener('mouseup',()=>{
-//         document.removeEventListener('mousemove',mover)
-//     })
-// }

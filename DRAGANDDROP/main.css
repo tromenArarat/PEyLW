@@ -2,22 +2,93 @@ body{
     padding: 0;
     margin: 0;
 }
+.caja{
+    display: inline-flex;
+}
 
 #contenedor{
     background-color: #212228;
     background-image: linear-gradient(#292a30 .1em, transparent 1.em),
     linear-gradient(90deg,#292a30 .1em, transparent .1em);
-    background-size: 4em 4em;
-    height: 100vh;
+    background-size: 2em 2em;
+    height: 60vh;
+    width:20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#tarjeta{
+#tarjeta1, #tarjeta2, #tarjeta3, #tarjeta4, #tarjeta5, #tarjeta6, #tarjeta7, #tarjeta8, #tarjeta9{
     width: 50px;
     height: 50px;
-    background-color: #AFDA9F;
     border-radius: 5px;
     cursor: pointer;
-    /* Esto es lo importantee para que el dragndrop funque */
     position:fixed;
+    z-index: 1;
+}
+#tarjeta1{
+    background-color: #AFDA9F;
+    top: 20px;
+}
+#tarjeta2{
+    background-color: #AFDA9F;
+    top: 80px;
+}
+#tarjeta3{
+    background-color: #AFDA9F;
+    top: 140px;
+}
+#tarjeta4{
+    background-color: #AFDA9F;
+    top: 200px;
+}
+#tarjeta5{
+    background-color: #AFDA9F;
+    top: 260px;
+}
+#tarjeta6{
+    background-color: #AFDA9F;
+    top: 320px;
+}
+#tarjeta7{
+    background-color: #AFDA9F;
+    top: 380px;
+}
+#tarjeta8{
+    background-color: #AFDA9F;
+    top: 440px;
+}
+#tarjeta9{
+    background-color: #AFDA9F;
+    top: 500px;
 }
 
+#contenedor2{
+    background-color: #5161bd;
+    background-image: linear-gradient(#292a30 .1em, transparent 1.em),
+    linear-gradient(90deg,#292a30 .1em, transparent .1em);
+    background-size: 4em 4em;
+    height: 60vh;
+    width: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#silueta{
+    width: 160px;
+    height: 160px;
+    background-color: #97163d;
+    border-radius: 5px;
+    position: relative;
+    /* Cuadrícula 3x3 de líneas punteadas */
+    background-image:
+        repeating-linear-gradient(to right, transparent, transparent 52px, #fff 52px, #fff 54px, transparent 54px),
+        repeating-linear-gradient(to bottom, transparent, transparent 52px, #fff 52px, #fff 54px, transparent 54px);
+    background-size: 54px 54px;
+    background-position: 0 0;
+}
+button{
+    background-color: beige;
+    position:relative;
+    top:150px;
+}
