@@ -46,8 +46,11 @@ function checarPosicion() {
             lastTarjeta.offsetTop > 195) {
             lastTarjeta.style.top = 209 + 'px';
             lastTarjeta.style.left = 374 + 'px';
+            let h2 = document.getElementsByTagName('h2')[0];
+            h2.innerHTML = 'Muy bien';
         } else {
-            alert('bien');
+            let h2 = document.getElementsByTagName('h2')[0];
+            h2.innerHTML = 'Intentelo de nuevo';
         }
     } else {
         alert('No se ha movido ninguna tarjeta.');
